@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block body%} 
+<main role="main">
+    {% if film in current_user.wishlist_films  %}
+    <a href="/wishlist/detele/{{film.id}}"> <div class="updatebtn btn bg-dark text-white">Remove from wishlist</div></a>
+    
+    {% else %}
+    <a href="/wishlist/add/{{film.id}}"> <div class="updatebtn btn bg-dark text-white">Add to wishlist</div></a>
+    {% endif %}
+    <section class="jumbotron mb-0  text-center bg-white">
+        <div class="container">
+            <div class="row mt-0">
+                
+                <div class="col-md-4  ">
+                    <div class="media mb-6">
+                        <img class="bd-placeholder-img card-img-top shadow align-self-center" width="100%" height="auto" src="{{film.img_url}}" />
+                    </div>
+                </div>
+                <div class="col-md-6 ml-4">
+                    <h1 class="mb-4">{{ film.name }}</h1>
+                    <table class="table table-borderless text-left h4 my-4">
+                        <tbody>
+                            <tr>
+                            
+                                <th >Ratings</th>
+                                <th >{{ film.rate }} (IMDb)</th>
+                                
+                            </tr>
+                            <tr>
+                        
+                                <td>Release date</td>
+                                <td>{{ film.release_date }}</td>
+                    
+                            </tr>
+                            <tr>
+                                
+                                <td>Runtime</td>
+                                <td>{{ film.runtime }} m</td>
+                            
+                            </tr>
+                            <tr>
+                    
+                                <td >Director</td>
+                                <td>{{ film.director }}</td>
+                            </tr>
+                            <tr>
+                                    
+                                <th >Actors</th>
+                                <th >{{film.actors}}</th>
+                                
+                            </tr>
+                            <tr>
+                                
+                                <td>Budget</td>
+                                <td>${{ film.budget }}</td>
+                    
+                            </tr>
+                            <tr>
+                
+                                <td >Cumulative Worldwide Gross</td>
+                                <td>${{ film.cross_world }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{{film.trailer_url}}" target="_blank" class="text-decoration-none mt-4 text-white"><div class="btn btn-secondary btn-lg btn-block ">Trailer URL</div></a>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="text-left">
+            <div class="py-5 bg-light">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="px-3" >
+                            <h3 class="font-weight-bold ">Storyline</h3>
+                            <br>
+                            
+                            <p class="">{{ film.storyline }}</p>                            
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+      
+  </main>
+{% endblock %}

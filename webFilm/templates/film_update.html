@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block body%} 
+<main role="main">
+    <form action="/film_update/{{film.id}}" method="POST">
+        <section class="jumbotron mb-0  text-center bg-white">
+        <div class="container">
+            <div class="row mt-0">
+                <div class="col-md-6  ">
+                    <div class="media mb-6">
+                        <input type="text" class="form-control" id='film_image' name="film_image" placeholder="Image URL" value="{{film.img_url}}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" placeholder="Film`s name"  name="film_name" id='film_name'value="{{film.name}}" >
+
+                    <table class="table table-borderless text-left h5 mb-4">
+                        <tbody>
+                            <tr>
+                            
+                                <th >Ratings</th>
+                                <th ><input class="form-control" placeholder="(IMDb)Rating" type="number" name="film_rate" id='film_rate' value="{{film.rate}}"> (IMDb)</th>
+                                
+                            </tr>
+                            <tr>
+                        
+                                <td>Release date</td>
+                                <td><input class="form-control" placeholder="Release date" type="date" name="film_release_date" id='film_release_date'  value="{{film.release_date}}"></td>
+                    
+                            </tr>
+                            <tr>
+                                
+                                <td>Runtime</td>
+                                <td><input class="form-control" placeholder="Runtime of film" type="number" name="film_runtime" id='film_runtime' value="{{film.runtime}}"> m</td>
+                            
+                            </tr>
+                            <tr>
+                    
+                                <td >Director</td>
+                                <td><input class="form-control"type="text" placeholder="Director" name="film_director" id='film_director' value="{{film.director}}"></td>
+                            </tr>
+                            <tr>
+                                    
+                                <th >Actors</th>
+                                <td><input class="form-control" type="text" placeholder="Actors" name="film_actors" id='film_actors'  value="{{film.actors}}"></td>
+                                
+                            </tr>
+                            <tr>
+                                
+                                <td>Budget</td>
+                                <td><input class="form-control" type="number" placeholder="Budget of the film" name="film_budget" id="film_budget"  value="{{film.budget}}"></td>
+                    
+                            </tr>
+                            <tr>
+                
+                                <td >Cumulative Worldwide Gross</td>
+                                <td><input class="form-control" type="number" placeholder="World income" name="film_cross_world" id='film_cross_world'  value="{{film.cross_world}}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input class="form-control mt-3" type="text" placeholder="Trailer URL"  name="film_trailer_url" id='film_trailer_url'  value="{{ film.trailer_url }}">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="text-left">
+            <div class="py-5 bg-light">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="px-3" >
+                            <h3 class="font-weight-bold ">Storyline</h3>
+                            <br>
+                            
+                            <textarea class="form-control" input class=" form-control" placeholder="Storyline" name="film_storyline" id='film_storyline' aria-label="With textarea">{{film.storyline}}</textarea>
+                            <input type="submit" class="btn btn-secondary btn-lg btn-block my-4" value="Update Film">
+
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+    </form>
+      
+  </main>
+{% endblock %}
