@@ -17,5 +17,8 @@
 
 Both users are equal !!!
 
-# Python libraries
+## Python libraries
 This project is using next Python libraries: [Flask](https://pypi.org/project/Flask/), [Flask-Sqlalchemy](https://pypi.org/project/Flask-SQLAlchemy/), [Flask-bcrypt](https://pypi.org/project/Flask-Bcrypt/), [dependency-injector](https://pypi.org/project/dependency-injector/), [flask-login](https://pypi.org/project/Flask-Login/)
+
+## Usage
+All libraries is preinstalled in pyhton virtual enviroment (**directory [virtenv](https://github.com/ostapbodnar/web_film_catalog/tree/master/virtenv)**)
